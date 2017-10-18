@@ -13,6 +13,12 @@
     "pretest": "npm run lint",
     "test": "nyc tape test/*.js"
   },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ]
+  },
   "bin": {
     "gen-new-project": "./bin/gen-new-project.js"
   },
