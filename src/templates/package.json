@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/jimf/{{{ packageName }}}"
   },
-  "scripts": {{{ npmScripts }}},
+  "scripts": {{{ npmScripts }}},{{{ nyc }}}
   "keywords": [],
   "author": "Jim Fitzpatrick",
   "license": "MIT",

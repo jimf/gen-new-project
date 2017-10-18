@@ -28,7 +28,14 @@ test('gen env:Node.js test:tape', function (t) {
     "lint": "standard",
     "pretest": "npm run lint",
     "test": "nyc tape test/*.js"
-  }`
+  }`,
+    nyc: `
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  },`
   }, 'generates expected context')
   t.end()
 })
@@ -54,7 +61,14 @@ test('gen env:Browser test:tape', function (t) {
     "pretest": "npm run lint",
     "test": "nyc tape test/*.js",
     "start": "budo src/main.js --live --open --host=localhost"
-  }`
+  }`,
+    nyc: `
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  },`
   }, 'generates expected context')
   t.end()
 })
@@ -81,7 +95,8 @@ test('gen env:Browser test:jest', function (t) {
     "test": "jest --coverage",
     "tdd": "npm test -- --watch",
     "start": "budo src/main.js --live --open --host=localhost"
-  }`
+  }`,
+    nyc: null
   }, 'generates expected context')
   t.end()
 })

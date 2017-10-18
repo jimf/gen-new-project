@@ -57,6 +57,7 @@ module.exports = function () {
 
       ctx.devDependencies = ['standard', 'coveralls']
       ctx.copyYear = (new Date()).getFullYear()
+      ctx.nyc = null
 
       if (!ctx.testingLib) {
         ctx.testingLib = 'tape'
@@ -67,6 +68,9 @@ module.exports = function () {
         ctx.devDependencies.push('nyc')
         scripts.coveralls = 'coveralls < coverage/lcov.info'
         scripts.test = 'nyc tape test/*.js'
+        ctx.nyc = '\n  "nyc": ' + indent(2, JSON.stringify({
+          reporter: ['lcov', 'text']
+        }, true, 2)).trimLeft() + ','
       } else if (ctx.testingLib === 'jest') {
         ctx.devDependencies.push('jest')
         scripts.coveralls = 'cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js'
