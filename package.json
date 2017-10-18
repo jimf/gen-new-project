@@ -1,0 +1,47 @@
+{
+  "name": "gen-new-project",
+  "version": "0.1.0",
+  "description": "Opinionated personal scaffolder for new JavaScript projects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jimf/gen-new-project"
+  },
+  "private": true,
+  "scripts": {
+    "coveralls": "coveralls < coverage/lcov.info",
+    "lint": "standard",
+    "pretest": "npm run lint",
+    "test": "nyc tape test/*.js"
+  },
+  "bin": {
+    "gen-new-project": "./bin/gen-new-project.js"
+  },
+  "files": [
+    "bin/",
+    "src/"
+  ],
+  "keywords": [
+    "generator",
+    "scaffold"
+  ],
+  "author": "Jim Fitzpatrick",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimf/gen-new-project/issues"
+  },
+  "homepage": "https://github.com/jimf/gen-new-project",
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "inquirer": "^3.3.0",
+    "mustache": "^2.3.0",
+    "recursive-copy": "^2.0.6",
+    "shelljs": "^0.7.8",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "nyc": "^11.2.1",
+    "standard": "^10.0.3",
+    "tape": "^4.8.0"
+  }
+}

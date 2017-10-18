@@ -1,0 +1,19 @@
+{
+  "name": "{{{ packageName }}}",
+  "version": "{{{ packageVersion }}}",
+  "description": "{{{ packageDesc }}}",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jimf/{{{ packageName }}}"
+  },
+  "scripts": {{{ npmScripts }}},
+  "keywords": [],
+  "author": "Jim Fitzpatrick",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimf/{{{ packageName }}}/issues"
+  },
+  "homepage": "https://github.com/jimf/{{{ packageName }}}",
+  "dependencies": {},
+  "devDependencies": {}
+}
