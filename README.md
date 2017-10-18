@@ -26,10 +26,10 @@ files.
 
 MIT
 
-[build-badge]: https://img.shields.io/travis/jimf/uparse/master.svg
-[build-status]: https://travis-ci.org/jimf/uparse
-[npm]: https://www.npmjs.org/package/uparse
-[coverage-badge]: https://img.shields.io/coveralls/jimf/uparse.svg
-[coverage-result]: https://coveralls.io/r/jimf/uparse
-[dep-badge]: https://img.shields.io/david/jimf/uparse.svg
-[dep-status]: https://david-dm.org/jimf/uparse
+[build-badge]: https://img.shields.io/travis/jimf/gen-new-project/master.svg
+[build-status]: https://travis-ci.org/jimf/gen-new-project
+[npm]: https://www.npmjs.org/package/gen-new-project
+[coverage-badge]: https://img.shields.io/coveralls/jimf/gen-new-project.svg
+[coverage-result]: https://coveralls.io/r/jimf/gen-new-project
+[dep-badge]: https://img.shields.io/david/jimf/gen-new-project.svg
+[dep-status]: https://david-dm.org/jimf/gen-new-project
