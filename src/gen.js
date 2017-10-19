@@ -13,12 +13,13 @@ function indent (spaces, str) {
     .join('\n')
 }
 
-module.exports = function () {
+module.exports = function (opts) {
   return tasklist([
     askQuestions([
       {
         name: 'packageName',
-        message: 'Package name:'
+        message: 'Package name:',
+        default: opts.packageName
       },
       {
         name: 'packageDesc',

@@ -25,6 +25,7 @@ module.exports = function (tasks) {
         return task.updater(ctx)
 
       case 'write-files':
+        // TODO: move dest out to option given to gen
         return copy(path.resolve(__dirname, 'templates'), process.cwd(), {
           dot: true,
           filter: function (path) {

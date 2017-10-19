@@ -2,7 +2,9 @@ var test = require('tape')
 var gen = require('../src/gen')
 
 function run (answers) {
-  var tasks = gen()
+  var tasks = gen({
+    packageName: 'default'
+  })
   return {
     promptedTestingLib: tasks.tasks[0].questions[4].when(answers),
     context: tasks.tasks[1].updater(answers)
