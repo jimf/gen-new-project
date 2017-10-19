@@ -20,7 +20,7 @@
     ]
   },
   "bin": {
-    "gen-new-project": "./bin/gen-new-project.js"
+    "gen-new-project": "./bin/gen-new-project"
   },
   "files": [
     "bin/",
