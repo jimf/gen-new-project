@@ -15,7 +15,7 @@ module.exports = function (tasks) {
             return interpret(t, result)
           })
         }, ctx).then(function () {
-          console.log(chalk.green('\n  Done ✓\n'))
+          console.log(chalk.green('\n  ✓ Done\n'))
         })
 
       case 'ask-questions':
