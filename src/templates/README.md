@@ -1,6 +1,6 @@
 # {{{ packageName }}}
 
-{{{ packageDesc }}}
+{{{ packageDesc }}}.
 
 [![npm Version][npm-badge]][npm]
 [![Build Status][build-badge]][build-status]
