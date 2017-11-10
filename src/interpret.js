@@ -33,6 +33,9 @@ module.exports = function (tasks) {
             return ctx.environment === 'Browser' ||
               !path.endsWith('index.html')
           },
+          rename: function (path) {
+            return path.replace('gitignore', '.gitignore')
+          },
           transform: function () {
             return through(function (chunk, enc, done) {
               done(null, mustache.render(chunk.toString('utf8'), ctx))
