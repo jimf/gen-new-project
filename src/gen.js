@@ -45,6 +45,18 @@ module.exports = function (opts) {
         when: function (answers) {
           return answers.environment === 'Browser'
         }
+      },
+      {
+        name: 'travis',
+        message: 'Include travis?',
+        type: 'confirm',
+        default: true
+      },
+      {
+        name: 'coveralls',
+        message: 'Include coveralls?',
+        type: 'confirm',
+        default: true
       }
     ]),
 
@@ -56,7 +68,7 @@ module.exports = function (opts) {
         test: null
       }
 
-      ctx.devDependencies = ['standard', 'coveralls']
+      ctx.devDependencies = ['standard'].concat(ctx.coveralls ? ['coveralls'] : [])
       ctx.copyYear = (new Date()).getFullYear()
       ctx.nyc = null
 
@@ -64,17 +76,25 @@ module.exports = function (opts) {
         ctx.testingLib = 'tape'
       }
 
+      if (!ctx.coveralls) {
+        delete scripts.coveralls
+      }
+
       if (ctx.testingLib === 'tape') {
         ctx.devDependencies.push('tape')
         ctx.devDependencies.push('nyc')
-        scripts.coveralls = 'coveralls < coverage/lcov.info'
+        if (ctx.coveralls) {
+          scripts.coveralls = 'coveralls < coverage/lcov.info'
+        }
         scripts.test = 'nyc tape test/*.js'
         ctx.nyc = '\n  "nyc": ' + indent(2, JSON.stringify({
           reporter: ['lcov', 'text']
         }, true, 2)).trimLeft() + ','
       } else if (ctx.testingLib === 'jest') {
         ctx.devDependencies.push('jest')
-        scripts.coveralls = 'cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js'
+        if (ctx.coveralls) {
+          scripts.coveralls = 'cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js'
+        }
         scripts.test = 'jest --coverage'
         scripts.tdd = 'npm test -- --watch'
       }

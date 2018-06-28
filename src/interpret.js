@@ -29,6 +29,11 @@ module.exports = function (tasks) {
         return copy(path.resolve(__dirname, 'templates'), process.cwd(), {
           dot: true,
           filter: function (path) {
+            if (path.includes('coveralls')) {
+              return ctx.coveralls
+            } else if (path.includes('travis')) {
+              return ctx.travis
+            }
             // TODO: this decision should be made in gen
             return ctx.environment === 'Browser' ||
               !path.endsWith('index.html')
